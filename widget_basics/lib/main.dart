@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:widget_basics/text.dart';
 
+import 'box.dart';
+import 'layout.dart';
+
 void main() {
   runApp(const MyApp());
 }
@@ -25,30 +28,31 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.green[300],
-      appBar: AppBar(
-        backgroundColor: Colors.black,
-        foregroundColor: Colors.white,
-        leading: Icon(Icons.arrow_back_ios),
-        title: Text("Widget Basics"),
-        centerTitle: true,
-        actions: [
-          Icon(Icons.arrow_forward_ios),
-          FlutterLogo(),
-        ],
-      ),
-      body: TextBasics(),
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {},
-        tooltip: "Floating Action Button",
-        backgroundColor: Colors.red,
-        child: Icon(
-          Icons.add,
-          size: 40,
-          color: Colors.white,
-        ),
-      ),
+    return const Scaffold(
+      // backgroundColor: Colors.green[300],
+      // appBar: AppBar(
+      //   backgroundColor: Colors.black,
+      //   foregroundColor: Colors.white,
+      //   leading: Icon(Icons.arrow_back_ios),
+      //   title: Text("Widget Basics"),
+      //   centerTitle: true,
+      //   actions: [
+      //     Icon(Icons.arrow_forward_ios),
+      //     FlutterLogo(),
+      //   ],
+      // ),
+      body: Center(child: LayoutBasics()),
+      // body: BoxBasics(), // alt + enter
+      // floatingActionButton: FloatingActionButton(
+      //   onPressed: () {},
+      //   tooltip: "Floating Action Button",
+      //   backgroundColor: Colors.red,
+      //   child: Icon(
+      //     Icons.add,
+      //     size: 40,
+      //     color: Colors.white,
+      //   ),
+      // ),
     );
   }
 }

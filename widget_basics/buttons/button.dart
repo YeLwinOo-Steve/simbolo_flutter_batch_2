@@ -24,10 +24,12 @@ class ButtonBasics extends StatelessWidget {
           icon: const Icon(Icons.ads_click),
           label: Text('Filled Icon Button'),
         ),
-        OutlinedButton(onPressed: () {}, child: Text('Outlined Button')),
+        OutlinedButton(
+            onPressed: () {}, child: Text('Outlined Button')),
         ElevatedButton(onPressed: () {}, child: Text("Elevated Button")),
         TextButton(onPressed: () {}, child: Text("Text Button")),
         FloatingActionButton(
+          key: const ValueKey('FAB 1'),
           onPressed: () {},
           tooltip: "Floating Action Button",
           backgroundColor: Colors.red,
