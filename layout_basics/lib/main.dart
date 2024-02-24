@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 
 import 'semi_circle.dart';
+import 'todo_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -17,7 +18,8 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
         useMaterial3: true,
       ),
-      home: SemiCircle(),
+      home: TodoScreen(),
+      // home: SemiCircle(),
     );
   }
 }
