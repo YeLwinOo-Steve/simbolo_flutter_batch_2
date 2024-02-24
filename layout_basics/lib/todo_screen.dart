@@ -52,25 +52,40 @@ class TodoScreen extends StatelessWidget {
           ],
         ),
       ),
-      bottomNavigationBar: Stack(
-        alignment: Alignment.topCenter,
-        children: [
-          Container(
-            height: 80,
-            margin: EdgeInsets.only(top: 20),
-            width: double.maxFinite,
-            color: indigo,
-          ),
-          IconButton.filled(
-            style: IconButton.styleFrom(
-              backgroundColor: paleGreen,
-              foregroundColor: Colors.white,
-            ),
-            onPressed: () {},
-            icon: Icon(Icons.add),
-          ),
-        ],
+      bottomNavigationBar: Container(
+        height: 80,
+        width: double.maxFinite,
+        color: indigo,
       ),
+      floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
+      floatingActionButton: IconButton.filled(
+          style: IconButton.styleFrom(
+            backgroundColor: paleGreen,
+            foregroundColor: Colors.white,
+          ),
+          onPressed: () {},
+          icon: Icon(Icons.add),
+        ),
+
+      // bottomNavigationBar: Stack(
+      //   alignment: Alignment.topCenter,
+      //   children: [
+      //     Container(
+      //       height: 80,
+      //       margin: EdgeInsets.only(top: 20),
+      //       width: double.maxFinite,
+      //       color: indigo,
+      //     ),
+      //     IconButton.filled(
+      //       style: IconButton.styleFrom(
+      //         backgroundColor: paleGreen,
+      //         foregroundColor: Colors.white,
+      //       ),
+      //       onPressed: () {},
+      //       icon: Icon(Icons.add),
+      //     ),
+      //   ],
+      // ),
     );
   }
 }
