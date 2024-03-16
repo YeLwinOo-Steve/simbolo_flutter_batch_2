@@ -8,10 +8,11 @@ class ScreenTwo extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final counterProvider = Provider.of<CounterProvider>(context);
     return Scaffold(
       appBar: AppBar(title: Text('screen 2')),
       body: Center(
-        child: Text('Counter ${context.read<CounterProvider>().counter}',style: TextStyle(
+        child: Text('Counter ${counterProvider.counter}',style: TextStyle(
           fontSize: 50,
         ),),
       ),

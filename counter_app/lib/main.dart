@@ -62,9 +62,9 @@ class _MyHomePageState extends State<MyHomePage> {
               'You have pushed the button this many times:',
             ),
             Consumer<CounterProvider>(
-              builder: (context, counterProvider, child) {
+              builder: (_, counter, __) {
                 return Text(
-                  '${counterProvider.counter}',
+                  '${counter.counter}',
                   style: Theme.of(context).textTheme.headlineMedium,
                 );
               },
@@ -75,6 +75,8 @@ class _MyHomePageState extends State<MyHomePage> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           context.read<CounterProvider>().incrementCounter();
+
+          // Provider.of<CounterProvider>(context).incrementCounter();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),
