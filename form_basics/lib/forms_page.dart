@@ -35,11 +35,7 @@ class _FormsPageState extends State<FormsPage> {
             padding: const EdgeInsets.all(8.0),
             child: Column(
               children: [
-
-
-
                 // Text('Data: ${controller.text}',style: TextStyle(fontSize: 30),),
-
 
                 TextFormField(
                   controller: controller,
@@ -47,12 +43,11 @@ class _FormsPageState extends State<FormsPage> {
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return 'Unfilled field';
-                    }else if(value.length < 6){
+                    } else if (value.length < 6) {
                       return 'Text must be at least 6 characters long!';
                     }
                     return null;
                   },
-
 
                   maxLines: null,
                   // enabled: false,
@@ -63,8 +58,6 @@ class _FormsPageState extends State<FormsPage> {
                       fontSize: 20,
                       color: Colors.blue,
                     ),
-
-
                     border: OutlineInputBorder(
                       borderRadius: BorderRadius.circular(30),
                       borderSide: const BorderSide(color: Colors.green),
@@ -81,32 +74,15 @@ class _FormsPageState extends State<FormsPage> {
                       borderRadius: BorderRadius.circular(30),
                       borderSide: const BorderSide(color: Colors.red),
                     ),
-
                     isDense: true,
                   ),
 
-                  onChanged: (String str){
+                  onChanged: (String str) {
                     print(str);
                   },
                 ),
 
-
-
-
-
                 const SizedBox(height: 16),
-
-
-
-
-
-
-
-
-
-
-
-
 
                 TextFormField(
                   controller: passwordController,
@@ -135,11 +111,7 @@ class _FormsPageState extends State<FormsPage> {
                     ),
                     isDense: true,
                   ),
-
-
                   obscureText: true,
-
-
                   validator: (String? value) {
                     if (value == null || value.isEmpty) {
                       return 'Unfilled Password!';
@@ -147,9 +119,7 @@ class _FormsPageState extends State<FormsPage> {
                   },
                 ),
 
-
                 const SizedBox(height: 16),
-
 
                 // DropdownButtonFormField<String>(
                 //   value: category,
@@ -203,10 +173,6 @@ class _FormsPageState extends State<FormsPage> {
                 //   ],
                 // ),
 
-
-
-
-
                 Radio(
                   value: 'Choice 1',
                   groupValue: _selectedRadio,
@@ -226,7 +192,6 @@ class _FormsPageState extends State<FormsPage> {
                   },
                 ),
 
-
                 RadioListTile(
                   title: Text('Choice 3'),
                   value: 'Option 3',
@@ -237,7 +202,6 @@ class _FormsPageState extends State<FormsPage> {
                     });
                   },
                 ),
-
 
                 Checkbox(
                   value: _isChecked,
@@ -280,10 +244,8 @@ class _FormsPageState extends State<FormsPage> {
                         ),
                       );
                     }
-
                   },
                 ),
-
               ],
             ),
           ),
