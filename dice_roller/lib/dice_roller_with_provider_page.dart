@@ -38,6 +38,7 @@ class _DiceRollerWithProviderPageState
             FilledButton.tonalIcon(
               onPressed: () {
                 context.read<DiceRollerProvider>().rollDice();
+                // Provider.of<DiceRollerProvider>(context).rollDice();
               },
               icon: Icon(Icons.ads_click),
               label: Text('Roll Dice'),

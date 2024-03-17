@@ -23,13 +23,13 @@ class _HomePageState extends State<HomePage> {
 
   void _increaseLove() {
     setState(() {
-      _loveCounter += Random().nextInt(5);
+      _loveCounter += Random().nextInt(5); // 0..4
     });
   }
 
   void _increaseUnlike() {
     setState(() {
-      _unlikeCounter += Random().nextInt(20);
+      _unlikeCounter += Random().nextInt(20); // 0..19
     });
   }
 

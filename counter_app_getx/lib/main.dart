@@ -71,7 +71,8 @@ class _MyHomePageState extends State<MyHomePage> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Get.find<CounterController>().incrementCounter();
+          final controller = Get.find<CounterController>();
+          controller.incrementCounter();
         },
         tooltip: 'Increment',
         child: const Icon(Icons.add),

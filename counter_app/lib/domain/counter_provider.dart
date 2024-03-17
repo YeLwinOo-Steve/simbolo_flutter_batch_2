@@ -4,6 +4,6 @@ class CounterProvider extends ChangeNotifier{
   int counter = 0;
   void incrementCounter() {
       counter++;
-      notifyListeners();
+      notifyListeners(); // update();
   }
 }

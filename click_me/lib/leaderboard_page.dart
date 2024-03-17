@@ -33,7 +33,7 @@ class LeaderboardPage extends StatelessWidget {
             ),
             if (result >= 100)
               Text(
-                'Wow! You are a celebrity 🫢',
+                'Wow! You are a celebrity 😳',
                 style: Theme.of(context).textTheme.titleLarge,
               ),
             if (result > 0)
