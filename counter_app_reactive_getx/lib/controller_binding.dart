@@ -5,5 +5,6 @@ class ControllerBinding extends Bindings {
   @override
   void dependencies() {
     Get.put(CounterController());
+    // Get.lazyPut(() => CounterController());
   }
 }
