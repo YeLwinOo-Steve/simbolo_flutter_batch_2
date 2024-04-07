@@ -1,6 +1,6 @@
 # todo
 
-### Simbolo Flutter Course batch-1 (Assignment 1)
+### **Simbolo** Flutter Course batch-2 (Assignment 2)
 
 ### Assignment 
 
@@ -17,6 +17,11 @@
           1. when delete button is clicked, a dialog or bottom sheet or a new page should appear
           2. you'll have to confirm to delete or cancel to delete
           3. deleted todo item should disappear from Tasks Page
+🏪 Add local storage
+    
+    ❓ You have to resolve all these conditions:
+          1. Do **CRUD functions** to all TodoModel list in a local database [ sqflite ]
+          2. you can safely remove `TodoList` list in `todo_list.dart` file 
 
 #### ⚠️⚠️ All edited todo items and deleted todo items should update _todos list from TodoList class
 
@@ -37,7 +42,7 @@
 
 - First install `git` commandline
   (either)
-- Clone this project `git clone https://github.com/YeLwinOo-Steve/simbolo_flutter_batch_1.git`
+- Clone this project `git clone https://github.com/YeLwinOo-Steve/simbolo_flutter_batch_2.git`
   (or)
 - Download zip file
 - Navigate to `todo_app` project
@@ -49,3 +54,5 @@
 - Basic Widgets
 - States
 - Layouts
+
+> If you stuck, my comments in the code files will guild you. Otherwise, you can ask me directly

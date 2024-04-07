@@ -9,7 +9,8 @@ class TodoList {
     _todos.add(todo);
   }
 
-  /// TODO: Assignment 1 - add edit and delete function for [_todos] list
+  /// TODO: Assignment - add edit and delete function for [_todos] list
+  /// TODO: add local storage for [_todos] CRUD
   static final List<TodoModel> _doneTodos = [];
   static List<TodoModel> get doneTodos => _doneTodos;
   static void addDoneTodo(TodoModel todo) {
