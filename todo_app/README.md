@@ -56,3 +56,7 @@
 - Layouts
 
 > If you stuck, my comments in the code files will guild you. Otherwise, you can ask me directly
+
+#### BONUS section
+
+*** Add any state management library as you wish.
