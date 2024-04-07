@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:http/http.dart' as http;
+import 'package:logger/logger.dart';
 import 'dart:convert';
+import 'album.dart';
 
 const Color darkBlue = Color.fromARGB(255, 18, 32, 47);
 
@@ -27,16 +29,51 @@ class HomePage extends StatefulWidget {
 }
 
 class HomePageState extends State<HomePage> {
+  final logger = Logger();
   dynamic bodyData;
 
+  Future<void> createAlbum() async {
+    var url = Uri.parse('https://jsonplaceholder.typicode.com/albums');
+    Album newAlbum = Album(
+      userId: 10,
+      id: 5,
+      title: "November Rain",
+    );
+    var response = await http.post(
+      url,
+      body: jsonEncode(
+        newAlbum.toJson(), // Album -> Map -> JSON string -----> SERVER
+      ),
+    );
+
+    if (response.statusCode == 201) {
+      // created
+      logger.i('album created successfully!');
+    } else {
+      logger.e('Failed to create album: ${response.statusCode}');
+    }
+  }
+
   Future<http.Response> fetchAlbum() {
-    return http.get(Uri.parse('https://jsonplaceholder.typicode.com/albums/1'));
+    return http
+        .get(
+          Uri.parse('https://jsonplaceholder.typicode.com/albums/1'),
+        )
+        .timeout(
+          const Duration(seconds: 10),
+        );
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Http Request')),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () async {
+          await createAlbum();
+        },
+        child: const Icon(Icons.refresh),
+      ),
       body: Center(
         child: FutureBuilder<dynamic>(
             future: fetchAlbum(), // Future<dynamic>
@@ -60,8 +97,9 @@ class HomePageState extends State<HomePage> {
 
               final data = snapshot.data;
               final body = jsonDecode(data.body); // data.body => JSON string
+              final Album album = Album.fromJson(body);
               return Text(
-                "${body['title']}",
+                album.title,
                 style: const TextStyle(
                   fontSize: 50,
                 ),
@@ -73,8 +111,6 @@ class HomePageState extends State<HomePage> {
 }
 
 // SOLID -> S - Single Responsibility Principle
-
-
 
 // void getAlbumData() async{
 //   final response = await fetchAlbum();
@@ -107,3 +143,5 @@ class HomePageState extends State<HomePage> {
 
 // print("status code ${data.statusCode}");
 // print("body ${data.body}");
+
+/// Debug, Release, Profile
